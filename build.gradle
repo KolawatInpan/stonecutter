@@ -171,3 +171,10 @@ idea {
         downloadJavadoc = true
     }
 }
+
+tasks.register('copyModJar', Copy) {
+    dependsOn build
+    from "$buildDir/libs"
+    include 'stonecutter-*.jar'
+    into "C:/Users/Kolawat/AppData/Roaming/.minecraft/installations/NeoForge/mods"
+}
